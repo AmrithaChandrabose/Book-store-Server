@@ -1,4 +1,4 @@
-const jwt = require('jsonWebToken')
+const jwt = require('jsonwebtoken')
 
 const adminJwtMiddleware = (req, res, next) => {
     console.log("Inside Admin JWT middleware");
