@@ -36,7 +36,7 @@ exports.login = async (req, res) => {
             if (existingUser.password == password || enPassword) {
 
                 //JWT TOKEN
-                const token = jwt.sign({ userMail: existingUser.email, role: existingUser.role }, process.env.jwtkey)
+                const token = jwt.sign({ userMail: existingUser.email, role: existingUser.role }, process.env.jwtKey)
                 console.log(token)
                 res.status(200).json({ message: "Successfully login", existingUser, token })
             }
@@ -63,7 +63,7 @@ exports.googleLogin = async (req, res) => {
             // if (existingUser.password == password || enPassword) {
 
             //JWT TOKEN
-            const token = jwt.sign({ userMail: existingUser.email }, process.env.jwtkey)
+            const token = jwt.sign({ userMail: existingUser.email }, process.env.jwtKey)
             console.log(token)
             res.status(200).json({ message: "Successfully login", existingUser, token })
 
